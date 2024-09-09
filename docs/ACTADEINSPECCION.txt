@@ -1,0 +1,50 @@
+Nº Expediente
+hora de inicio
+fecha de inicio
+propietaria
+dni
+proceso (certificacion de posesion)
+manzana
+calle
+sector
+distrito
+departamento
+lote
+nª
+PPJJ/AAHH
+provincia
+
+--------------------------------------------
+datos tecnicos:
+
+area(m2)
+perimetro
+linderos y medidas (frente,derecha,izquiera,fondo) en mL
+altura de edificacion (pisos)
+
+material de construccion: muros de ladrillo, techo algerado, piso de cercamica
+edificacion:
+puertas: METALICA
+ventanas: METALICA
+
+Ambientes:
+1º piso: sala comedor, cocina, 2 dormitorios, baño
+2º piso: sala comedor, cocina, 2 dormitorios, baño
+3º piso: sala comedor, cocina, 2 dormitorios, baño
+
+servicios basicos 
+
+LUZ: SI
+AGUA: POR TERCEROS
+DESAGUE: SI
+
+
+VERIFICACION DE CONDICIONES EN LAS CUALES SE EJERCE LA POSESION:
+EN ESTE MOMENTO INTERVIENE: ----------------------------------
+fecha de finalizacion 
+hora
+
+
+FIRMA DEL REPRESENTANTE DEL SOLICITANTE
+FIRMA DEL REPRESENTANTE DE DDU MPCH 
+FIRMA DE TESTIGOS

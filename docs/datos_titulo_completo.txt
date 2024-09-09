@@ -1,0 +1,72 @@
+SELECT
+    STRING_AGG(CAST(td_certificado_propietario.cepr_id AS VARCHAR), ', ') AS cepr_ids,
+    tb_titulo.titu_id,
+    tb_titulo.titu_partelec,
+    tb_titulo.titu_numtitulo,
+    tb_titulo.titu_partlote,
+    tb_titulo.titu_asiento,
+    tb_titulo.titu_serie,
+    tb_titulo.titu_tipo,
+    tb_titulo.titu_tazacion,
+    tb_titulo.titu_numresolucion,
+    tb_titulo.titu_fecharesolucion,
+    tb_titulo.titu_fechaemision,
+    tb_certificado.cert_id,
+    tb_certificado.cert_ubicacion,
+    tb_certificado.cert_manzana,
+    tb_certificado.cert_lote,
+    tb_certificado.cert_tipopobl,
+    tb_certificado.cert_nompobl,
+    tb_certificado.cert_distrito,
+    tb_certificado.cert_provincia,
+    tb_certificado.cert_departamento,
+    tb_certificado.cert_area,
+    tb_certificado.cert_frente,
+    tb_certificado.cert_derecha,
+    tb_certificado.cert_izquierda,
+    tb_certificado.cert_fondo,
+    STRING_AGG(
+        CONCAT(
+            ' idProp: ', tb_propietario.prop_id, ' ',
+            '| Nombre Completo: ', tb_propietario.prop_nombre, ' ', tb_propietario.prop_apep, ' ', tb_propietario.prop_apem, ' ',
+            '| Estado Civil: ', tb_propietario.prop_estadocivil, ' ',
+            '| DNI/RUC: ', tb_propietario.prop_dni, ' ',
+            '| Tipo: ', tb_propietario.prop_tipo, ' ',
+            '| Emp: ', tb_propietario.prop_empadronamientos
+        ),
+        ', '
+    ) AS DatosPropietarios
+FROM
+    td_certificado_propietario
+INNER JOIN
+    tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id
+INNER JOIN
+    tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id
+INNER JOIN
+    tb_titulo ON tb_certificado.cert_id = tb_titulo.cert_id
+GROUP BY
+    tb_titulo.titu_id,
+    tb_titulo.titu_partelec,
+    tb_titulo.titu_numtitulo,
+    tb_titulo.titu_partlote,
+    tb_titulo.titu_asiento,
+    tb_titulo.titu_serie,
+    tb_titulo.titu_tipo,
+    tb_titulo.titu_tazacion,
+    tb_titulo.titu_numresolucion,
+    tb_titulo.titu_fecharesolucion,
+    tb_titulo.titu_fechaemision,
+    tb_certificado.cert_id,
+    tb_certificado.cert_ubicacion,
+    tb_certificado.cert_manzana,
+    tb_certificado.cert_lote,
+    tb_certificado.cert_tipopobl,
+    tb_certificado.cert_nompobl,
+    tb_certificado.cert_distrito,
+    tb_certificado.cert_provincia,
+    tb_certificado.cert_departamento,
+    tb_certificado.cert_area,
+    tb_certificado.cert_frente,
+    tb_certificado.cert_derecha,
+    tb_certificado.cert_izquierda,
+    tb_certificado.cert_fondo;

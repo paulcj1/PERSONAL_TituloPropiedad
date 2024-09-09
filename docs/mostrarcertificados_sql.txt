@@ -1,0 +1,40 @@
+SELECT 
+    tb_certificado.cert_id,
+    tb_certificado.cert_numcert,
+    tb_certificado.cert_numregdoc,
+    tb_certificado.cert_numexpe,
+    tb_certificado.cert_tecinf,
+    tb_propietario.prop_nombre,
+    tb_propietario.prop_apep,
+    tb_propietario.prop_apem,
+    tb_propietario.prop_estadocivil,
+    tb_propietario.prop_dni,
+    tb_propietario.prop_tipo,
+    tb_propietario.prop_empadronamientos,
+    tb_certificado.cert_ubicacion,
+    tb_certificado.cert_manzana,
+    tb_certificado.cert_lote,
+    tb_certificado.cert_tipopobl,
+    tb_certificado.cert_nompobl,
+    tb_certificado.cert_distrito,
+    tb_certificado.cert_provincia,
+    tb_certificado.cert_departamento,
+    tb_certificado.cert_perimetro,
+    tb_certificado.cert_area,
+    tb_certificado.cert_frente,
+    tb_certificado.cert_derecha,
+    tb_certificado.cert_izquierda,
+    tb_certificado.cert_fondo,
+    tb_certificado.cert_uso,
+    tb_certificado.cert_tecinf,
+    tb_certificado.cert_numactainsp,
+    tb_certificado.insp_id
+    FROM 
+    td_certificado_propietario INNER JOIN
+    tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id INNER JOIN
+    tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id 
+    WHERE 
+    tb_certificado.est = 1;
+	
+	
+	

@@ -1,0 +1,41 @@
+CONSTANTES:
+
+Serie: I
+Empadronamientos: 3
+Asiento: G00001
+Resolucion Gerencial: 276-2022-MPCH-GDU
+-------------------------------------------------------
+partida electronica: Nº 11303614
+Asentado: PP. JJ. LAS PALMERAS
+planos de trazado y lotizacion: G00001
+
+PRIMERA:
+
+nombre GERSON DANIEL CORONADO PURIZACA 
+DNI Nº: 75919457 
+estado civil: SOLTERO
+Lote Nº: 1
+Manzana: A
+Sector: PP JJ. LAS PALMERAS
+Distrito: Pimentel
+Provincia: Chiclayo
+Departamento: Lambayeque
+Partida electronica Nº: 11388858
+
+SEGUNDA:
+
+TITULO
+Area: 133.92
+
+POR EL FRENTE: Con la Av. Pacifico, con 13.00 ml
+POR LA DERECHA ENTRANDO: Con Prol. De Vìa, con 11.89 ml
+POR LA IZQUIERDA ENTRANDO: Con el Lote Nº2, con 12.81 ml
+POR EL FONDO: Con el Lote Nº1, con 9.52 ml
+
+TERCERA:
+
+Tipo de titulo: Gratuito
+
+SETIMA: 
+
+Resolucion Gerencia de Desarrollo Urbano Nº: 276-2022-MPCH-GDU, de fecha 03 de Novimebre de 2022

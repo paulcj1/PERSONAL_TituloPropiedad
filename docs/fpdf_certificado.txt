@@ -1,0 +1,110 @@
+<?php
+require('fpdf.php');
+
+class PDF extends FPDF {
+    // Pie de página
+    function Footer() {
+        // Posición a 1.5 cm del final
+        $this->SetY(-15);
+        // Arial italic 8
+        $this->SetFont('Arial', 'I', 8);
+        // Número de página
+        $this->Cell(0, 10, 'Page ' . $this->PageNo(), 0, 0, 'C');
+    }
+}
+
+// Datos del certificado
+$nombre = "YOVANI SANCHEZ CHAVEZ";
+$dni = "42221064";
+$ubicacion = "en la calle Los Laureles, Mz “C” Lote N° 02 del AA.HH/PP.JJ “LOS ANGELES” del Distrito de Pimentel, Provincia de Chiclayo y Departamento de Lambayeque";
+$perimetro = "45.67 ml.";
+$area = "88.68 m²";
+$lindero_frente = "5.25 mt.";
+$lindero_derecha = "17.79 mt.";
+$lindero_izquierda = "17.87 mt.";
+$lindero_fondo = "4.76 mt.";
+$uso = "Vivienda";
+$fecha = "17 MAYO 2024";
+$inspector = "MIGUEL ANGEL DELGADO ALZAMORA";
+$informe_tecnico = "182/2024-MPCH-DAA.HH-MADA.";
+$base_legal = "Artículo 24 de la Ley N° 28687 “Ley de Desarrollo y Complementaria de Formalización de la Propiedad Informal, Acceso al Suelo y Dotación de Servicios Básicos.”";
+
+$pdf = new PDF();
+$pdf->AddPage();
+$pdf->SetFont('Arial', '', 12);
+
+// Encabezado
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->Cell(0, 10, 'MUNICIPALIDAD PROVINCIAL DE CHICLAYO', 0, 1, 'C');
+$pdf->SetFont('Arial', '', 10);
+$pdf->Cell(0, 10, 'GERENCIA DE DESARROLLO URBANO', 0, 1, 'C');
+$pdf->Cell(0, 10, 'SUBGERENCIA DE OBRAS PRIVADAS', 0, 1, 'C');
+$pdf->Cell(0, 10, 'DEPARTAMENTO DE ASENTAMIENTOS HUMANOS', 0, 1, 'C');
+$pdf->Ln(10);
+
+// Título del certificado
+$pdf->SetFont('Arial', 'B', 14);
+$pdf->Cell(0, 10, 'CERTIFICADO DE POSESION N° /2024-GDU-MPCH', 0, 1, 'C');
+$pdf->SetFont('Arial', '', 10);
+$pdf->Cell(0, 10, 'Expediente N° 658739 -2024.', 0, 1, 'C');
+$pdf->Ln(10);
+
+// Datos del beneficiario
+$pdf->SetFont('Arial', '', 12);
+$pdf->Cell(0, 10, 'de Asentamientos Humanos de la Municipalidad Provincial de Chiclayo, otorgan el presente Certificado de Posesión a favor de:', 0, 1, 'L');
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->Cell(0, 10, $nombre, 0, 1, 'C');
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->Cell(0, 10, 'DNI N° ' . $dni, 0, 1, 'C');
+$pdf->Ln(10);
+
+// Detalles de la posesión
+$pdf->SetFont('Arial', '', 12);
+$pdf->MultiCell(0, 10, 'Que según inspección realizada se ha constatado que se posesionaria del predio ubicado ' . $ubicacion . ' y tiene las siguientes características:', 0, 'L');
+$pdf->Ln(10);
+
+$pdf->SetFont('Arial', '', 12);
+$pdf->Cell(0, 10, 'Perímetro: ' . $perimetro, 0, 1, 'L');
+$pdf->Cell(0, 10, 'Área: ' . $area, 0, 1, 'L');
+$pdf->Cell(0, 10, 'Linderos y medidas perimétricas:', 0, 1, 'L');
+$pdf->Cell(0, 10, 'Por el Frente: ' . $lindero_frente, 0, 1, 'L');
+$pdf->Cell(0, 10, 'Por la Derecha: ' . $lindero_derecha, 0, 1, 'L');
+$pdf->Cell(0, 10, 'Por la Izquierda: ' . $lindero_izquierda, 0, 1, 'L');
+$pdf->Cell(0, 10, 'Por el Fondo: ' . $lindero_fondo, 0, 1, 'L');
+$pdf->Cell(0, 10, 'Uso: ' . $uso, 0, 1, 'L');
+$pdf->Ln(10);
+
+// Base Legal
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->Cell(0, 10, 'BASE LEGAL:', 0, 1, 'L');
+$pdf->SetFont('Arial', '', 12);
+$pdf->MultiCell(0, 10, $base_legal, 0, 'L');
+$pdf->SetFont('Arial', 'I', 10);
+$pdf->MultiCell(0, 10, 'NOTA: Este Certificado no tiene validez para fines de Prescripción Adquisitiva de Dominio.', 0, 'L');
+$pdf->Ln(10);
+
+// Informe Técnico
+$pdf->SetFont('Arial', 'B', 12);
+$pdf->Cell(0, 10, 'INFORME TECNICO:', 0, 1, 'L');
+$pdf->SetFont('Arial', '', 12);
+$pdf->Cell(0, 10, 'Informe Técnico N° ' . $informe_tecnico, 0, 1, 'L');
+$pdf->Cell(0, 10, 'Acta de Inspección N° S/N', 0, 1, 'L');
+$pdf->Cell(0, 10, 'Inspector: ' . $inspector, 0, 1, 'L');
+$pdf->SetFont('Arial', 'I', 10);
+$pdf->MultiCell(0, 10, 'Este documento carece de valor para realizar traspasos, acciones judiciales, tampoco constituye reconocimiento alguno que afecte el derecho de propiedad del titular del terreno.', 0, 'L');
+$pdf->Ln(10);
+
+// Firma y Fecha
+$pdf->SetFont('Arial', '', 12);
+$pdf->Cell(0, 10, 'SE OTORGA EL PRESENTE CERTIFICADO A SOLICITUD DE LA INTERESADA, PARA GESTIONAR LA FACTIBILIDAD DE SERVICIOS BASICOS DESCRITOS EN LA BASE LEGAL MENCIONADA.', 0, 1, 'L');
+$pdf->Ln(10);
+
+$pdf->Cell(0, 10, 'Chiclayo, ' . $fecha, 0, 1, 'R');
+$pdf->Ln(30);
+
+$pdf->Cell(0, 10, '.......................................', 0, 1, 'C');
+$pdf->Cell(0, 10, 'Firma', 0, 1, 'C');
+
+// Salida del PDF
+$pdf->Output();
+?>

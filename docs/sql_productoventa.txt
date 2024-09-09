@@ -1,0 +1,19 @@
+sqlproductoventa
+
+SELECT 
+td_producto_venta.ven_pro_id,
+tm_producto.pro_id,
+tm_producto.pro_nom,
+tm_producto.pro_descrip,
+tm_producto.pro_prec,
+tm_producto.pro_stock,
+tm_venta.ven_id,
+tm_venta.ven_id,
+tm_venta.ven_fech,
+tm_venta.ven_total,
+tm_venta.est
+FROM td_producto_venta INNER JOIN
+tm_producto ON td_producto_venta.pro_id = tm_producto.pro_id INNER JOIN
+tm_venta ON td_producto_venta.ven_id = tm_venta.ven_id
+WHERE 
+tm_venta.ven_id = 1;

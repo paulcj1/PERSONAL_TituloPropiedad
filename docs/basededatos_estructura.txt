@@ -1,0 +1,33 @@
+PERSONA
+nombre: 
+DNI:
+estado civil:
+
+Detalle_persona_titulo
+
+
+TITULO DE PROPIEDAD
+partida electronica
+
+
+
+VIVIENDA:
+Lote 
+Manzana
+Sector
+ubicacion
+
+
+DEPARTAMENTO
+id_departamento
+nombre
+
+PROVINCIA
+id_provincia
+nombre
+id_departamento
+
+DISTRITO
+id_distrito
+nombre
+id_provincia

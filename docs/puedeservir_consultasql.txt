@@ -1,0 +1,106 @@
+SELECT 
+                    tb_certificado.cert_id,
+                    STRING_AGG(
+                        CONCAT(
+                            ' idProp: ', tb_propietario.prop_id, ' ',
+                            '| Nombre Completo: ', tb_propietario.prop_nombre, ' ', tb_propietario.prop_apep, ' ', tb_propietario.prop_apem, ' ',
+                            '| Estado Civil: ', tb_propietario.prop_estadocivil, ' ',
+                            '| DNI/RUC: ', tb_propietario.prop_dni, ' ',
+                            '| Tipo: ', tb_propietario.prop_tipo, ' ',
+                            '| Emp: ', tb_propietario.prop_empadronamientos
+                        ),
+                        ', '
+                    ) AS DatosPropietarios
+                FROM
+                    td_certificado_propietario
+                INNER JOIN
+                    tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id
+                INNER JOIN
+                    tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id
+                INNER JOIN
+                    tb_titulo ON tb_certificado.cert_id = tb_titulo.cert_id
+                GROUP BY
+                    tb_certificado.cert_id
+
+	SELECT 
+	tb_certificado.cert_id,
+	STRING_AGG(CAST(tb_propietario.prop_id AS TEXT), ', ') AS propietarioid,
+	STRING_AGG(
+		CONCAT(
+			'| Nombre Completo: ', tb_propietario.prop_nombre, ' ', tb_propietario.prop_apep, ' ', tb_propietario.prop_apem, ' ',
+			'| Estado Civil: ', tb_propietario.prop_estadocivil, ' ',
+			'| DNI/RUC: ', tb_propietario.prop_dni, ' ',
+			'| Tipo: ', tb_propietario.prop_tipo, ' ',
+			'| Emp: ', tb_propietario.prop_empadronamientos
+		),
+		', '
+	) AS DatosPropietarios
+FROM
+	td_certificado_propietario
+INNER JOIN
+	tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id
+INNER JOIN
+	tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id
+INNER JOIN
+	tb_titulo ON tb_certificado.cert_id = tb_titulo.cert_id
+GROUP BY
+	tb_certificado.cert_id
+	
+	SELECT 
+            o.order_id, 
+            o.order_details,
+            o.order_date,
+            ARRAY_AGG(c.customer_id) AS customer_ids,
+            ARRAY_AGG(c.first_name || ' ' || c.last_name) AS customer_names,
+            ARRAY_AGG(c.email) AS customer_emails
+        FROM 
+            orders o
+        INNER JOIN 
+            order_customers oc ON o.order_id = oc.order_id
+        INNER JOIN 
+            customers c ON oc.customer_id = c.customer_id
+        WHERE 
+            o.order_id IN (
+                SELECT order_id 
+                FROM order_customers 
+                GROUP BY order_id 
+                HAVING COUNT(DISTINCT customer_id) >= 2
+            )
+        GROUP BY 
+            o.order_id, 
+            o.order_details,
+            o.order_date;
+	
+			SELECT 
+			tb_certificado.cert_id,
+			tb_certificado.cert_uso,
+			STRING_AGG(CAST(tb_propietario.prop_id AS TEXT), ', ') AS propietarioid,
+			STRING_AGG(
+				CONCAT(
+					'| Nombre Completo: ', tb_propietario.prop_nombre, ' ', tb_propietario.prop_apep, ' ', tb_propietario.prop_apem, ' ',
+					'| Estado Civil: ', tb_propietario.prop_estadocivil, ' ',
+					'| DNI/RUC: ', tb_propietario.prop_dni, ' ',
+					'| Tipo: ', tb_propietario.prop_tipo, ' ',
+					'| Emp: ', tb_propietario.prop_empadronamientos
+				),
+				', '
+			) AS DatosPropietarios
+		FROM 
+			tb_certificado
+		INNER JOIN 
+			td_certificado_propietario ON tb_certificado.cert_id = td_certificado_propietario.cert_id
+		INNER JOIN 
+			tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id
+		WHERE 
+			tb_certificado.cert_id IN (
+				SELECT cert_id 
+				FROM td_certificado_propietario 
+				GROUP BY cert_id 
+				HAVING COUNT(DISTINCT prop_id) >= 1
+			)
+		GROUP BY 
+			tb_certificado.cert_id,
+			tb_certificado.cert_uso;
+
+
+					

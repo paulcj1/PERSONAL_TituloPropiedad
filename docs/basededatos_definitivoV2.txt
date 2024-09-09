@@ -1,0 +1,201 @@
+CREATE TABLE tb_propietario(
+    prop_id serial primary key,
+	prop_nombre varchar(50) not null,
+	prop_apep varchar(50) not null,
+	prop_apem varchar(50) not null,
+	prop_estadocivil varchar(50) null,
+	prop_dni varchar(50) not null,
+	prop_tipo varchar(50) not null,
+	prop_empadronamientos integer not null,
+	est smallint not null default 1
+);
+
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Paul','Cervera','Jimenez','Soltero','75366402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Gustav','Karpashov','Carrera','Soltero','75366434','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Karson','Cena','Ramson','Casado','75546402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Siri','Cristensen','Ruler','Casado','75336402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Juan Pedro','Vargas','Chaupen','Casado','75546002','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Sara','Socas','Talen','Casado','75546411','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Zenon','Cena','Tortis','Soltero','73546402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Karen','Schwarz','Reno','Soltero','75543402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Sonia','Vanchaufen','Calieri','Casado','75546402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Koumpo','Audeneyan','Tapa','Casado','75546402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Karson','Cena','Ramson','Soltero','70546402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Karty','Coleman','Turin','Soltero','75506402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Enquetia','Oneal','Turin','Soltero','51064012','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Donnie','Yaipen','Talavera','Soltero','73506401','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Eren','Jaegar','Quispe','Casado','75506402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Sally','Cajusol','Pulsener','Casado','15506402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Pablo','Cassinelli','Porto','Soltero','15506402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Abed','Tarpei','Palos','Viudo','17501402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Aaron','Capelletti','Kounde','Soltero','17571402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Karim','Benzema','Hyuga','Soltero','77501442','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Malvador y Asociados','','','','1754140254','Persona Juridica','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Malvador y Asociados','','','','1754140254','Persona Juridica','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Empresaurios SAC','','','','1234140254','Persona Juridica','3');
+
+CREATE TABLE tb_inspector(
+	insp_id serial primary key,
+    insp_nombre varchar(50) not null,
+	insp_apep varchar(50) null,
+	insp_apem varchar(50) null,
+	insp_dni varchar(50) not null,
+	est smallint not null default 1
+);
+
+insert into tb_inspector (insp_nombre,insp_apep,insp_apem,insp_dni) values ('Francis','Bacon','Tarazona','32324343');
+insert into tb_inspector (insp_nombre,insp_apep,insp_apem,insp_dni) values ('Alex','Turner','Rivera','32321234');
+insert into tb_inspector (insp_nombre,insp_apep,insp_apem,insp_dni) values ('Santois','Torzen','Torino','32324443');
+insert into tb_inspector (insp_nombre,insp_apep,insp_apem,insp_dni) values ('Magnus','Carlesen','Mephisto','32324443');
+
+CREATE TABLE tb_certificado(
+	cert_id serial primary key,
+	insp_id integer not null,
+	cert_area decimal(10,2) not null,
+	cert_perimetro decimal(10,2) not null,
+	cert_ubicacion varchar (50) not null,
+	cert_nompobl varchar(50) not null,
+	cert_tipopobl varchar (50) not null,
+	cert_uso varchar (50) not null,
+	cert_frente varchar (50) not null,
+	cert_derecha varchar (50) not null,
+	cert_izquierda varchar (50) not null,
+	cert_fondo varchar (50) not null,
+	cert_manzana varchar (50) not null,
+	cert_lote varchar (50) not null,
+	cert_distrito varchar(50) not null,
+	cert_provincia varchar(50) not null,
+	cert_departamento varchar (50) not null,
+	cert_numregdoc varchar (50) not null,
+	cert_numexpe varchar (50) not null,
+	cert_tecinf varchar (50) not null,
+	cert_numcert varchar (50) not null,
+	est smallint not null default 1,
+	FOREIGN KEY (insp_id) REFERENCES tb_inspector(insp_id)
+);
+
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,1500.000,2110.000,'Calle Cuzco','Namekuzein','PP. JJ.','Vivienda','av. lan','av. san','av. ran','av. tan','D','50','Pimentel','Chiclayo','Lambayeque','1501339 - 2024','649891 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,1532.000,3250.000,'Calle Sinai','Murumbi','AA. HH.','Vivienda','av. tan','av. gan','av. man','av. sos','D','10','Pimentel','Chiclayo','Lambayeque','1512349 - 2024','645441 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,2343.000,1230.000,'Calle Rampuzen','Sudan','PP. JJ.','Vivienda','av. dan','av. nam','av. lon','av. ron','M','30','Pimentel','Chiclayo','Lambayeque','1533339 - 2024','657691 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,1564.000,2456.000,'Calle Velazques','Collapampa','Urb.','Vivienda','av. con','av. zar','av. wer','av. ken','D','70','Pimentel','Chiclayo','Lambayeque','1231339 - 2024','645491 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,1345.000,5646.000,'Calle Tazmania','Saraza','PP. JJ.','Vivienda','av. lan','av. seim','av. ran','av. tan','D','50','Pimentel','Chiclayo','Lambayeque','1532319 - 2024','685541 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,1234.000,7674.000,'Calle Capalca','Toluca','Av.','Vivienda','av. lan','av. yen','av. ran','av. tan','D','34','Pimentel','Chiclayo','Lambayeque','1565379 - 2024','645691 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,4324.000,4564.000,'Calle Toren','Americas','PP. JJ.','Vivienda','av. lan','av. san','av. ran','av. ren','D','65','Pimentel','Chiclayo','Lambayeque','1543549 - 2024','612391 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,1234.000,4532.000,'Calle Sansom','Diego Ferre','AA.HH.','Vivienda','av. lan','av. xen','av. ran','av. tan','D','98','Pimentel','Chiclayo','Lambayeque','1102331 - 2024','642351 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,2567.000,8765.000,'Calle Siluro','Miraflores','Urb.','Vivienda','av. dor','av. por','av. gen','av. sol','C','123','Pimentel','Chiclayo','Lambayeque','1301329 - 2024','632190 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,6543.000,3455.000,'Calle Tarzan','San isidro','Urb.','Vivienda','av. lan','av. san','av. iza','av. tan','L','234','Pimentel','Chiclayo','Lambayeque','1543739 - 2024','646591 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,2340.000,7655.000,'Calle Arriaga','La Victoria','Urb.','Vivienda','av. pon','av. don','av. ran','av. min','F','19','Pimentel','Chiclayo','Lambayeque','125339 - 2024','643691 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,4350.000,3244.000,'Calle Gareca','Sartois','Av.','Vivienda','av. lan','av. gon','av. ran','av. mon','D','34','Pimentel','Chiclayo','Lambayeque','1505669 - 2024','645620 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,2567.000,8765.000,'Calle Siluro','Miraflores','Urb.','Vivienda','av. dor','av. tre','av. gen','av. sol','J','123','Pimentel','Chiclayo','Lambayeque','1301329 - 2024','132191 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,633.000,3411.000,'Calle Tarzan','San isidro','Urb.','Vivienda','av. lan','av. san','av. ytr','av. tan','K','234','Pimentel','Chiclayo','Lambayeque','1543739 - 2024','744397 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,2340.000,2625.000,'Calle Arriaga','La Victoria','Urb.','Vivienda','av. pon','av. don','av. ran','av. min','M','19','Pimentel','Chiclayo','Lambayeque','125339 - 2024','643771 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,4922.000,3234.000,'Calle Gareca','Sartois','Av.','Vivienda','av. lan','av. ger','av. ran','av. mon','G','34','Pimentel','Chiclayo','Lambayeque','1505669 - 2024','645620 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,9567.000,4764.000,'Calle Siluro','Miraflores','Urb.','Vivienda','av. fdr','av. asd','av. gen','av. sol','K','123','Pimentel','Chiclayo','Lambayeque','1301329 - 2024','666190 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,1193.000,3555.000,'Calle Tarzan','San isidro','Urb.','Vivienda','av. lan','av. san','av. iza','av. uyt','R','234','Pimentel','Chiclayo','Lambayeque','1543739 - 2024','647791 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,2940.000,4445.000,'Calle Arriaga','La Victoria','Urb.','Vivienda','av. pon','av. don','av. ran','av. min','R','19','Pimentel','Chiclayo','Lambayeque','125339 - 2024','643881 - 2024','42342','000543');
+insert into tb_certificado (insp_id,cert_area,cert_perimetro,cert_ubicacion,cert_nompobl,cert_tipopobl,cert_uso,cert_frente,cert_derecha,cert_izquierda,cert_fondo,cert_manzana,cert_lote,cert_distrito,cert_provincia,cert_departamento,cert_numregdoc,cert_numexpe,cert_tecinf,cert_numcert) values (1,7350.000,3334.000,'Calle Gareca','Sartois','Av.','Vivienda','av. lan','av. dsf','av. ran','av. iuy','D','34','Pimentel','Chiclayo','Lambayeque','1505669 - 2024','645699 - 2024','42342','000543');
+
+CREATE TABLE td_certificado_propietario(
+	cepr_id serial primary key,
+	cert_id integer not null,
+	prop_id integer not null,
+	usua_id integer not null,
+	cepr_fecharegistro date not null,
+	est smallint not null default 1,
+	FOREIGN KEY (cert_id) REFERENCES tb_certificado(cert_id),
+	FOREIGN KEY (prop_id) REFERENCES tb_propietario(prop_id),
+	FOREIGN KEY (usua_id) REFERENCES tb_usuario(usua_id)
+	
+);
+
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (1,1,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (1,2,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (2,3,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (2,4,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (3,5,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (3,6,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (4,7,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (5,8,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (6,9,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (6,10,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (6,11,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (7,12,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (8,13,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (8,14,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (9,15,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (9,16,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (9,17,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (10,18,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (11,19,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (12,20,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (13,21,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (14,21,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (15,22,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (16,23,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (17,23,1,'2024-01-22');
+insert into td_certificado_propietario (cert_id,prop_id,usua_id,cepr_fecharegistro) values (18,23,1,'2024-01-22');
+
+CREATE TABLE tb_alcalde(
+	alca_id serial primary key,
+	alca_dni varchar(50) not null,
+	alca_nom varchar (50) not null,
+	alca_apep varchar (50) not null,
+	alca_apem varchar (50) not null,
+	alca_fechini date not null,
+	alca_fechfin date not null,
+	est smallint not null default 1
+);
+
+insert into tb_alcalde (alca_dni,alca_nom,alca_apep,alca_apem,alca_fechini,alca_fechfin) values ('75366402','Paul','Sambia','Tolum','04-04-2024','04-04-2024');
+
+CREATE TABLE tb_titulo(
+	titu_id serial primary key,
+	cert_id integer not null,
+	alca_id integer not null,
+	titu_partelec varchar (50) not null,
+	titu_numtitulo varchar (50) not null,
+	titu_partlote varchar (50) not null,
+	titu_asiento varchar (50) not null,
+	titu_serie varchar (50) not null,
+	titu_tipo varchar (50) not null,
+	titu_tazacion decimal(10,2),
+	titu_numresolucion varchar (50) not null,
+	titu_fecharesolucion date not null,
+	titu_fechaemision date not null,
+	titu_fecharegistro date not null,
+	est smallint not null default 1,
+	FOREIGN KEY (cert_id) REFERENCES tb_certificado(cert_id),
+	FOREIGN KEY (alca_id) REFERENCES tb_alcalde(alca_id)
+);
+
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (1,1,'11303614','0000400','11388858','G0001','I','Gratuito',0000.00,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (2,1,'11303614','0000401','11388843','G0001','I','Gratuito',0000.00,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (3,1,'11303614','0000402','11388845','G0001','I','Oneroso',1252.25,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (4,1,'11303614','0000403','11388863','G0001','I','Gratuito',0000.00,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (5,1,'11303614','0000404','11388865','G0001','I','Gratuito',0000.00,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (6,1,'11303614','0000405','11388878','G0001','I','Oneroso',1332.58,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (7,1,'11303614','0000406','11388834','G0001','I','Gratuito',0000.00,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (8,1,'11303614','0000407','11388811','G0001','I','Oneroso',3245.98,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (9,1,'11303614','0000408','11388833','G0001','I','Oneroso',4532.11,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (10,1,'11303614','0000409','11388856','G0001','I','Gratuito',0000.00,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (11,1,'11303614','0000410','11388876','G0001','I','Oneroso',5463.11,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (12,1,'11303614','0000411','11388878','G0001','I','Gratuito',0000.00,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (13,1,'11303614','0000412','11388898','G0001','I','Gratuito',0000.00,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+insert into tb_titulo (cert_id,alca_id,titu_partelec,titu_numtitulo,titu_partlote,titu_asiento,titu_serie,titu_tipo,titu_tazacion,titu_numresolucion,titu_fechaemision,titu_fecharesolucion,titu_fecharegistro) values (14,1,'11303614','0000413','11388888','G0001','I','Gratuito',0000.00,'276-2022-MPCH-GDU','2022-11-03','2022-11-04','2022-11-04');
+
+CREATE TABLE tb_usuario(
+	usua_id serial primary key,
+	usua_dni varchar(50) not null,
+	usua_nom varchar (50) not null,
+	usua_apep varchar (50) not null,
+	usua_apem varchar (50) not null,
+	usua_correo varchar(50) not null,
+	usua_pass varchar (50) not null,
+	usua_fecharegistro date not null,
+	est smallint not null
+);
+
+insert into tb_usuario (usua_dni,usua_nom,usua_apep,usua_apem,usua_correo,usua_pass,usua_fecharegistro,est) values ('75466402','Hector','Cambiazzo','Saler','hector@gmail.com','123456','04-04-2024',1);
+insert into tb_usuario (usua_dni,usua_nom,usua_apep,usua_apem,usua_correo,usua_pass,usua_fecharegistro,est) values ('75454432','Juan','Peterson','Porter','juan@gmail.com','123456','04-04-2024',2);
+
+select * from tb_usuario

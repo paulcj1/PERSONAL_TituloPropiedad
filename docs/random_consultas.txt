@@ -1,0 +1,281 @@
+SELECT
+STRING_AGG(CAST(td_certificado_propietario.cepr_id AS VARCHAR), ', '),
+tb_titulo.titu_id,
+tb_titulo.titu_partelec,
+tb_titulo.titu_numtitulo,
+tb_titulo.titu_partlote,
+tb_titulo.titu_asiento,
+tb_titulo.titu_serie,
+tb_titulo.titu_tipo,
+tb_titulo.titu_tazacion,
+tb_titulo.titu_numresolucion,
+tb_titulo.titu_fecharesolucion,
+tb_titulo.titu_fechaemision,
+tb_certificado.cert_id,
+tb_certificado.cert_numcert,
+tb_certificado.cert_numregdoc,
+tb_certificado.cert_numexpe,
+tb_certificado.cert_tecinf,
+tb_certificado.cert_ubicacion,
+tb_certificado.cert_manzana,
+tb_certificado.cert_lote,
+tb_certificado.cert_tipopobl,
+tb_certificado.cert_nompobl,
+tb_certificado.cert_distrito,
+tb_certificado.cert_provincia,
+tb_certificado.cert_departamento,
+tb_certificado.cert_perimetro,
+tb_certificado.cert_area,
+tb_certificado.cert_frente,
+tb_certificado.cert_derecha,
+tb_certificado.cert_izquierda,
+tb_certificado.cert_fondo,
+tb_certificado.cert_uso,
+STRING_AGG (CONCAT(' idProp: ',tb_propietario.prop_id,' ',' Nombre Completo: ',tb_propietario.prop_nombre, ' ',tb_propietario.prop_apep, ' ',tb_propietario.prop_apem, ' ','| Estado Civil:',tb_propietario.prop_estadocivil,' ','| DNI/RUC: ',tb_propietario.prop_dni,' ','| Tipo: ', tb_propietario.prop_tipo,' ','| Emp: ',tb_propietario.prop_empadronamientos), ',') as DatosPropietarios
+FROM
+td_certificado_propietario INNER JOIN
+tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id INNER JOIN
+tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id INNER JOIN
+tb_titulo ON tb_certificado.cert_id = tb_titulo.cert_id 
+where tb_certificado.cert_id = 1
+GROUP BY tb_certificado.cert_id
+
+
+SELECT 
+    
+	tb_titulo.titu_id,
+	tb_titulo.titu_partelec,
+	tb_titulo.titu_numtitulo,
+	tb_titulo.titu_partlote,
+	tb_titulo.titu_asiento,
+	tb_titulo.titu_serie,
+	tb_titulo.titu_tipo,
+	tb_titulo.titu_tazacion,
+	tb_titulo.titu_numresolucion,
+	tb_titulo.titu_fecharesolucion,
+	tb_titulo.titu_fechaemision,
+	tb_certificado.cert_id,
+	tb_certificado.cert_numcert,
+	tb_certificado.cert_numregdoc,
+	tb_certificado.cert_numexpe,
+	tb_certificado.cert_tecinf,
+	tb_certificado.cert_ubicacion,
+	tb_certificado.cert_manzana,
+	tb_certificado.cert_lote,
+	tb_certificado.cert_tipopobl,
+	tb_certificado.cert_nompobl,
+	tb_certificado.cert_distrito,
+	tb_certificado.cert_provincia,
+	tb_certificado.cert_departamento,
+	tb_certificado.cert_perimetro,
+	tb_certificado.cert_area,
+	tb_certificado.cert_frente,
+	tb_certificado.cert_derecha,
+	tb_certificado.cert_izquierda,
+	tb_certificado.cert_fondo,
+	tb_propietario.prop_id,
+	STRING_AGG (CONCAT(' idProp: ',tb_propietario.prop_id,' ',' Nombre Completo: ',tb_propietario.prop_nombre, ' ',tb_propietario.prop_apep, ' ',tb_propietario.prop_apem, ' ','| Estado Civil:',tb_propietario.prop_estadocivil,' ','| DNI/RUC: ',tb_propietario.prop_dni,' ','| Tipo: ', tb_propietario.prop_tipo,' ','| Emp: ',tb_propietario.prop_empadronamientos), ',') as DatosPropietarios
+    FROM td_certificado_propietario INNER JOIN
+	tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id INNER JOIN
+	tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id INNER JOIN 
+	tb_titulo ON tb_certificado.cert_id = tb_titulo.cert_id 
+	WHERE tb_certificado.cert_id = 1
+    GROUP BY tb_certificado.cert_iD
+  
+  	SELECT 
+	tb_certificado.cert_id,
+	tb_certificado.cert_numcert,
+	tb_certificado.cert_numregdoc,
+	tb_certificado.cert_numexpe,
+	tb_certificado.cert_tecinf,
+	STRING_AGG (CONCAT(' Nombre Completo: ',tb_propietario.prop_nombre, ' ',tb_propietario.prop_apep, ' ',tb_propietario.prop_apem, ' ','| Estado Civil:',tb_propietario.prop_estadocivil,' ','| DNI/RUC: ',tb_propietario.prop_dni,' ','| Tipo: ', tb_propietario.prop_tipo,' ','| Emp: ',tb_propietario.prop_empadronamientos), ',') as DatosPropietarios,
+	tb_certificado.cert_ubicacion,
+	tb_certificado.cert_manzana,
+	tb_certificado.cert_lote,
+	tb_certificado.cert_tipopobl,
+	tb_certificado.cert_nompobl,
+	tb_certificado.cert_distrito,
+	tb_certificado.cert_provincia,
+	tb_certificado.cert_departamento,
+	tb_certificado.cert_perimetro,
+	tb_certificado.cert_area,
+	tb_certificado.cert_frente,
+	tb_certificado.cert_derecha,
+	tb_certificado.cert_izquierda,
+	tb_certificado.cert_fondo,
+	tb_certificado.cert_uso,
+	tb_certificado.cert_tecinf,
+	tb_certificado.cert_numactainsp,
+	tb_certificado.insp_id
+	FROM 
+	td_certificado_propietario INNER JOIN
+	tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id INNER JOIN
+	tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id INNER JOIN
+	tb_titulo ON tb_certificado.cert_id = tb_titulo.cert_id 
+	WHERE tb_certificado.est = 1
+	GROUP BY tb_certificado.cert_id
+	
+	SELECT
+    STRING_AGG(CAST(td_certificado_propietario.cepr_id AS VARCHAR), ', ') AS cepr_ids,
+    tb_titulo.titu_id,
+    tb_titulo.titu_partelec,
+    tb_titulo.titu_numtitulo,
+    tb_titulo.titu_partlote,
+    tb_titulo.titu_asiento,
+    tb_titulo.titu_serie,
+    tb_titulo.titu_tipo,
+    tb_titulo.titu_tazacion,
+    tb_titulo.titu_numresolucion,
+    tb_titulo.titu_fecharesolucion,
+    tb_titulo.titu_fechaemision,
+    tb_certificado.cert_id,
+    tb_certificado.cert_ubicacion,
+    tb_certificado.cert_manzana,
+    tb_certificado.cert_lote,
+    tb_certificado.cert_tipopobl,
+    tb_certificado.cert_nompobl,
+    tb_certificado.cert_distrito,
+    tb_certificado.cert_provincia,
+    tb_certificado.cert_departamento,
+    tb_certificado.cert_area,
+    tb_certificado.cert_frente,
+    tb_certificado.cert_derecha,
+    tb_certificado.cert_izquierda,
+    tb_certificado.cert_fondo,
+    STRING_AGG(
+        CONCAT(
+            ' idProp: ', tb_propietario.prop_id, ' ',
+            '| Nombre Completo: ', tb_propietario.prop_nombre, ' ', tb_propietario.prop_apep, ' ', tb_propietario.prop_apem, ' ',
+            '| Estado Civil: ', tb_propietario.prop_estadocivil, ' ',
+            '| DNI/RUC: ', tb_propietario.prop_dni, ' ',
+            '| Tipo: ', tb_propietario.prop_tipo, ' ',
+            '| Emp: ', tb_propietario.prop_empadronamientos
+        ),
+        ', '
+    ) AS DatosPropietarios
+FROM
+    td_certificado_propietario
+INNER JOIN
+    tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id
+INNER JOIN
+    tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id
+INNER JOIN
+    tb_titulo ON tb_certificado.cert_id = tb_titulo.cert_id
+GROUP BY
+    tb_titulo.titu_id,
+    tb_titulo.titu_partelec,
+    tb_titulo.titu_numtitulo,
+    tb_titulo.titu_partlote,
+    tb_titulo.titu_asiento,
+    tb_titulo.titu_serie,
+    tb_titulo.titu_tipo,
+    tb_titulo.titu_tazacion,
+    tb_titulo.titu_numresolucion,
+    tb_titulo.titu_fecharesolucion,
+    tb_titulo.titu_fechaemision,
+    tb_certificado.cert_id,
+    tb_certificado.cert_ubicacion,
+    tb_certificado.cert_manzana,
+    tb_certificado.cert_lote,
+    tb_certificado.cert_tipopobl,
+    tb_certificado.cert_nompobl,
+    tb_certificado.cert_distrito,
+    tb_certificado.cert_provincia,
+    tb_certificado.cert_departamento,
+    tb_certificado.cert_area,
+    tb_certificado.cert_frente,
+    tb_certificado.cert_derecha,
+    tb_certificado.cert_izquierda,
+    tb_certificado.cert_fondo;
+	
+	
+	SELECT
+    t.titu_id,
+    t.titu_partelec,
+    t.titu_numtitulo,
+    t.titu_partlote,
+    t.titu_asiento,
+    t.titu_serie,
+    t.titu_tipo,
+    t.titu_tazacion,
+    t.titu_numresolucion,
+    t.titu_fecharesolucion,
+    t.titu_fechaemision,
+    c.cert_id,
+    c.cert_numcert,
+    c.cert_numregdoc,
+    c.cert_numexpe,
+    c.cert_tecinf,
+    c.cert_ubicacion,
+    c.cert_manzana,
+    c.cert_lote,
+    c.cert_tipopobl,
+    c.cert_nompobl,
+    c.cert_distrito,
+    c.cert_provincia,
+    c.cert_departamento,
+    c.cert_perimetro,
+    c.cert_area,
+    c.cert_frente,
+    c.cert_derecha,
+    c.cert_izquierda,
+    c.cert_fondo,
+    c.cert_uso,
+    subquery.DatosPropietarios
+FROM
+    tb_titulo t
+INNER JOIN
+    tb_certificado c ON t.cert_id = c.cert_id
+INNER JOIN
+    (
+        SELECT
+            tb_certificado.cert_id,
+            STRING_AGG(CAST(td_certificado_propietario.cepr_id AS VARCHAR), ', ') AS cepr_ids,
+            STRING_AGG(
+                CONCAT(
+                    '| idProp: ', tb_propietario.prop_id, ' ',
+                    '| Nombre Completo: ', tb_propietario.prop_nombre, ' ', tb_propietario.prop_apep, ' ', tb_propietario.prop_apem, ' ',
+                    '| Estado Civil: ', tb_propietario.prop_estadocivil, ' ',
+                    '| DNI/RUC: ', tb_propietario.prop_dni, ' ',
+                    '| Tipo: ', tb_propietario.prop_tipo, ' ',
+                    '| Emp: ', tb_propietario.prop_empadronamientos
+                ),
+                ', '
+            ) AS DatosPropietarios
+        FROM
+            td_certificado_propietario
+        INNER JOIN
+            tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id
+        INNER JOIN
+            tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id
+        GROUP BY
+            tb_certificado.cert_id
+    ) AS subquery ON c.cert_id = subquery.cert_id
+
+
+
+SELECT
+	STRING_AGG(CAST(td_certificado_propietario.cepr_id AS VARCHAR), ', ') AS cepr_ids,
+	tb_certificado.cert_id,
+	STRING_AGG(
+		CONCAT(
+			' idProp: ', tb_propietario.prop_id, ' ',
+			'| Nombre Completo: ', tb_propietario.prop_nombre, ' ', tb_propietario.prop_apep, ' ', tb_propietario.prop_apem, ' ',
+			'| Estado Civil: ', tb_propietario.prop_estadocivil, ' ',
+			'| DNI/RUC: ', tb_propietario.prop_dni, ' ',
+			'| Tipo: ', tb_propietario.prop_tipo, ' ',
+			'| Emp: ', tb_propietario.prop_empadronamientos
+		),
+		', '
+	) AS DatosPropietarios
+FROM
+	td_certificado_propietario
+INNER JOIN
+	tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id
+INNER JOIN
+	tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id
+INNER JOIN
+	tb_titulo ON tb_certificado.cert_id = tb_titulo.cert_id
+GROUP BY
+	tb_certificado.cert_id
+	

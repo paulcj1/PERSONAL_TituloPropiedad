@@ -1,0 +1,59 @@
+SELECT 
+    	p1.prop_id AS id_propietario1,
+    	p1.prop_nombre AS nombre_propietario1,
+	p1.prop_apep AS apellidop_propietario1,
+	p1.prop_apem AS apellidom_propietario1,
+	p1.prop_estadocivil AS estadocivil_propietario1,
+	p1.prop_dni AS dni_propietario1,
+	p1.prop_tipo AS tipo_propietario1,
+	p1.prop_empadronamientos AS empadronamientos_propietario1,
+	p2.prop_id AS id_propietario2,
+   	p2.prop_nombre AS nombre_propietario2,
+	p2.prop_apep AS apellidop_propietario2,
+	p2.prop_apem AS apellidom_propietario2,
+	p2.prop_estadocivil AS estadocivil_propietario2,
+	p2.prop_dni AS dni_propietario2,
+	p2.prop_tipo AS tipo_propietario2,
+	p2.prop_empadronamientos AS empadronamientos_propietario2,
+	c.cert_id,
+	c.cert_area,
+	c.cert_perimetro,
+    	c.cert_ubicacion,
+	c.cert_nompobl,
+	c.cert_tipopobl,
+	c.cert_uso
+	c.cert_frente,
+    	c.cert_derecha,
+    	c.cert_izquierda,
+    	c.cert_fondo
+    	c.cert_manzana,
+    	c.cert_lote,
+    	c.cert_distrito,
+    	c.cert_provincia,
+    	c.cert_departamento,
+    	c.cert_numregdoc,
+	c.cert_numexpe,
+	c.cert_tecinf,
+	c.cert_numcert,
+	c.cert_numactainsp	
+FROM 
+    td_certificado_propietario pt1
+INNER JOIN 
+    tb_propietario p1 ON pt1.prop_id = p1.prop_id
+INNER JOIN 
+    td_certificado_propietario pt2 ON pt1.cert_id = pt2.cert_id AND pt1.prop_id <> pt2.prop_id
+INNER JOIN 
+    tb_propietario p2 ON pt2.prop_id = p2.prop_id
+INNER JOIN 
+    tb_certificado c ON pt1.cert_id = c.cert_id
+WHERE 
+    c.cert_id = 1 
+LIMIT 1; 
+
+
+
+
+
+
+
+

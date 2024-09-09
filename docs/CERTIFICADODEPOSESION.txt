@@ -1,0 +1,23 @@
+CERTIFICADO DE POSESION Nº - 2024-GDU-MPCH
+Nº Reg. Doc. Nº 1501339 - 2024            Expediente Nº 645691-2024
+
+propietario
+direccion
+lote
+manzana 
+distrito
+provincia
+departamento
+perimetro
+area
+linderos (por el frente, por la derecha, por la izquierda, por el fondo)
+uso (vivienda)
+
+Informe tecnico:
+Nº de informe tecnico
+Nº de acta de inspeccion
+inspector
+
+
+
+FIRMA DE INSPECTOR, FIRMA DEL GERENTE

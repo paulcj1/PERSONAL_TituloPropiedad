@@ -1,0 +1,21 @@
+SELECT 
+td_producto_venta.ven_pro_id,
+tm_usuario.usu_id,
+tm_usuario.usu_nom,
+tm_usuario.usu_apep,
+tm_usuario.usu_apem,
+tm_cliente.cli_id,
+tm_cliente.cli_nom,
+tm_cliente.cli_apep,
+tm_cliente.cli_apem,
+tm_venta.ven_id,
+tm_venta.ven_fech,
+tm_venta.ven_total,
+tm_venta.est
+FROM td_producto_venta INNER JOIN
+tm_producto ON td_producto_venta.pro_id = tm_producto.pro_id INNER JOIN
+tm_venta ON td_producto_venta.ven_id = tm_venta.ven_id INNER JOIN
+tm_usuario ON tm_venta.usu_id = tm_usuario.usu_id INNER JOIN
+tm_cliente ON tm_venta.cli_id = tm_cliente.cli_id
+WHERE 
+tm_venta.usu_id = 1;

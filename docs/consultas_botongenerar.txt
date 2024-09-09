@@ -1,0 +1,119 @@
+SELECT 
+	td_certificado_propietario.cepr_id,
+	tb_certificado.cert_id,
+	tb_certificado.cur_nom,
+	tb_certificado.cur_descrip,
+	tb_certificado.cur_fechini,
+	tb_certificado.cur_fechfin,
+	tm_usuario.usu_id,
+	tm_usuario.usu_nom,
+	tm_usuario.usu_apep,
+	tm_usuario.usu_apem,
+	tm_curso.cur_img,
+	tm_instructor.inst_id,
+	tm_instructor.inst_nom,
+	tm_instructor.inst_apep,
+	tm_instructor.inst_apem
+	FROM td_curso_usuario INNER JOIN 
+	tm_curso ON td_curso_usuario.cur_id = tm_curso.cur_id INNER JOIN
+	tm_usuario ON td_curso_usuario.usu_id = tm_usuario.usu_id INNER JOIN
+	tm_instructor ON tm_curso.inst_id = tm_instructor.inst_id
+	WHERE 
+	td_curso_usuario.curd_id = ?";
+	
+	SELECT 
+	tb_alcalde.alca_id,
+	tb_alcalde.alca_dni,
+	tb_alcalde.alca_nom,
+	tb_alcalde.alca_apep,
+	tb_alcalde.alca_apem,
+	tb_titulo.titu_id,
+	tb_titulo.titu_partelec,
+	tb_titulo.titu_numtitulo,
+	tb_titulo.titu_partlote,
+	tb_titulo.titu_asiento,
+	tb_titulo.titu_serie,
+	tb_titulo.titu_tipo,
+	tb_titulo.titu_tazacion,
+	tb_titulo.titu_numresolucion,
+	tb_titulo.titu_fecharesolucion,
+	tb_certificado.cert_id,
+	tb_certificado.cert_perimetro,
+	tb_certificado.cert_ubicacion,
+	tb_certificado.cert_tipopobl,
+	tb_certificado.cert_nompobl,
+	tb_certificado.cert_frente,
+	tb_certificado.cert_derecha,
+	tb_certificado.cert_izquierda,
+	tb_certificado.cert_fondo,
+	tb_Certificado.cert_manzana,
+	tb_certificado.cert_lote,
+	tb_certificado.cert_distrito,
+	tb_certificado.cert_provincia,
+	tb_certificado.cert_departamento,
+	tb_propietario.prop_id,
+	tb_propietario.prop_nombre,
+	tb_propietario.prop_apep,
+	tb_propietario.prop_apem,
+	tb_propietario.prop_estadocivil,
+	tb_propietario.prop_dni,
+	tb_propietario.prop_tipo,
+	tb_propietario.prop_empadronamientos
+	FROM 
+	tb_titulo INNER JOIN
+	tb_certificado ON tb_titulo.cert_id = tb_certificado.cert_id INNER JOIN
+	td_certificado_propietario ON tb_certificado.cert_id = td_certificado_propietario.cert_id INNER JOIN
+	tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id INNER JOIN
+	tb_alcalde ON tb_titulo.alca_id = tb_alcalde.alca_id 
+	WHERE tb_titulo.est = 1 AND tb_titulo.titu_id = 1
+	
+	SELECT 
+	td_certificado_propietario.cepr_id,
+	tb_titulo.titu_id,
+	tb_titulo.titu_partelec,
+	tb_titulo.titu_numtitulo,
+	tb_titulo.titu_partlote,
+	tb_titulo.titu_asiento,
+	tb_titulo.titu_serie,
+	tb_titulo.titu_tipo,
+	tb_titulo.titu_tazacion,
+	tb_titulo.titu_numresolucion,
+	tb_titulo.titu_fecharesolucion,
+	tb_certificado.cert_id,
+	tb_certificado.cert_perimetro,
+	tb_certificado.cert_ubicacion,
+	tb_certificado.cert_tipopobl,
+	tb_certificado.cert_nompobl,
+	tb_certificado.cert_frente,
+	tb_certificado.cert_derecha,
+	tb_certificado.cert_izquierda,
+	tb_certificado.cert_fondo,
+	tb_Certificado.cert_manzana,
+	tb_certificado.cert_lote,
+	tb_certificado.cert_distrito,
+	tb_certificado.cert_provincia,
+	tb_certificado.cert_departamento,
+	tb_propietario.prop_id,
+	tb_propietario.prop_nombre,
+	tb_propietario.prop_apep,
+	tb_propietario.prop_apem,
+	tb_propietario.prop_estadocivil,
+	tb_propietario.prop_dni,
+	tb_propietario.prop_tipo,
+	tb_propietario.prop_empadronamientos,
+	tb_alcalde.alca_id,
+	tb_alcalde.alca_dni,
+	tb_alcalde.alca_nom,
+	tb_alcalde.alca_apep,
+	tb_alcalde.alca_apem
+	FROM 
+	td_certificado_propietario INNER JOIN
+	tb_certificado ON td_certificado_propietario.cert_id = tb_certificado.cert_id INNER JOIN
+	tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id INNER JOIN
+	tb_titulo ON tb_certificado.cert_id = tb_titulo.cert_id INNER JOIN
+	tb_alcalde ON tb_titulo.alca_id = tb_alcalde.alca_id
+	WHERE tb_certificado.cert_id = 1
+	
+	
+	
+	

@@ -1,0 +1,21 @@
+SOLICITO CERTIFICADO DE POSESION
+ENVIADO AL ALCALDE
+
+DATOS:
+
+propietario:
+dni_propietario:
+conyugue:------------
+dni conyugue: --------------
+calle
+numero
+direccion
+manzana
+lote
+
+fecha
+
+firma del propietario
+
+
+VISTA CENITAL DE LOS LINDEROS

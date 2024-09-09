@@ -1,0 +1,7 @@
+una vez se hayan cumplido los requisitos y se tenga una resolucion para emitir
+el area legal la envia a la gerencia de desarrollo urbano
+gerencia de desarrollo urbano emite su resolucion
+se envia a asentamiento para emitir el titulo de propiedad
+para posteriormente poder registrarlo en sunarp
+
+el formato debe tener la matriz

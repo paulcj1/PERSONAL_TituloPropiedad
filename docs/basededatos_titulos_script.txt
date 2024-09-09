@@ -1,0 +1,122 @@
+
+
+CREATE TABLE tb_propietario(
+    prop_id serial primary key,
+	prop_nombre varchar(50) not null,
+	prop_apep varchar(50) not null,
+	prop_apem varchar(50) not null,
+	prop_estadocivil varchar(50) null,
+	prop_dni varchar(50) not null,
+	prop_tipo varchar(50) not null,
+	prop_empadronamientos integer not null,
+	est smallint not null default 1
+);
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Paul','Cervera','Jimenez','Soltero','75366402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Gustav','Karpashov','Carrera','Soltero','75366434','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Karson','Cena','Ramson','Casado','75546402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Siri','Cristensen','Ruler','Casado','75336402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Juan Pedro','Vargas','Chaupen','Casado','75546002','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Sara','Socas','Talen','Casado','75546411','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Zenon','Cena','Tortis','Soltero','73546402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Karen','Schwarz','Reno','Soltero','75543402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Sonia','Vanchaufen','Calieri','Casado','75546402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Koumpo','Audeneyan','Tapa','Casado','75546402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Karson','Cena','Ramson','Soltero','70546402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Karty','Coleman','Turin','Soltero','75506402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Enquetia','Oneal','Turin','Soltero','51064012','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Donnie','Yaipen','Talavera','Soltero','73506401','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Eren','Jaegar','Quispe','Casado','75506402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Sally','Cajusol','Pulsener','Casado','15506402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Pablo','Cassinelli','Porto','Soltero','15506402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Abed','Tarpei','Palos','Viudo','17501402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Aaron','Capelletti','Kounde','Soltero','17571402','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Karim','Benzema','Hyuga','Soltero','77501442','Persona Natural','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Malvador y Asociados','','','','1754140254','Persona Juridica','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Malvador y Asociados','','','','1754140254','Persona Juridica','3');
+insert into tb_propietario (prop_nombre,prop_apep,prop_apem,prop_estadocivil,prop_dni,prop_tipo,prop_empadronamientos) values ('Empresaurios SAC','','','','1234140254','Persona Juridica','3');
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE tb_inspector(
+	insp_id serial primary key,
+    insp_nombre varchar(50) not null,
+	insp_apep varchar(50) not null,
+	insp_apem varchar(50) not null,
+	insp_estadocivil varchar(50) null,
+	insp_dni varchar(50) not null,
+	est smallint not null default 1
+);
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+insert into tb_propietario (insp_nombre,insp_apep,insp_apem,insp_dni,) values ('Francis','Bacon','Tarazona','32324343');
+insert into tb_propietario (insp_nombre,insp_apep,insp_apem,insp_dni,) values ('Alex','Turner','Rivera','32321234');
+insert into tb_propietario (insp_nombre,insp_apep,insp_apem,insp_dni,) values ('Santois','Torzen','Torino','32324443');
+insert into tb_propietario (insp_nombre,insp_apep,insp_apem,insp_dni,) values ('Magnus','Carlesen','Mephisto','32324443');
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE tb_certificado(
+	cert_id serial primary key,
+	insp_id integer not null,
+	cert_area varchar(50) not null,
+	cert_frente varchar (50) not null,
+	cert_derecha varchar (50) not null,
+	cert_izquierda varchar (50) not null,
+	cert_fondo varchar (50) not null,
+	cert_uso varchar (50) not null,
+	cert_ubicacion varchar (50) not null,
+	cert_nomplob varchar(50) not null,
+	cert_tipopobl varchar (50) not null,
+	cert_numregdoc varchar (50) not null,
+	cert_numexpe varchar (50) not null,
+	cert_tecinf varchar (50) not null,
+	cert_numcert varchar (50) not null,
+	cert_manzana varchar (50) not null,
+	cert_lote varchar (50) not null,
+	cert_distrito varchar(50) not null,
+	cert_provincia varchar(50) not null,
+	cert_departamento varchar (50) not null,
+	cert_fecharegistro varchar (50) not null,
+	est smallint not null default 1,
+	FOREIGN KEY (insp_id) REFERENCES tb_inspector(insp_id)
+);
+
+CREATE TABLE td_certificado_propietrio(
+	cepr_id serial primary key,
+	cert_id integer not null,
+	prop_id integer not null,
+	est smallint not null default 1,
+	FOREIGN KEY (cert_id) REFERENCES tb_certificado(cert_id),
+	FOREIGN KEY (prop_id) REFERENCES tb_propietario(prop_id)
+);
+
+CREATE TABLE tb_titulo(
+	titu_id serial primary key,
+	cert_id integer not null,
+	alca_id integer not null,
+	titu_partelec varchar (50) not null,
+	titu_numerotitulo varchar (50) not null,
+	titu_partidaporlote varchar (50) not null,
+	titu_asiento varchar (50) not null,
+	titu_serie varchar (50) not null,
+	titu_tipo varchar (50) not null,
+	titu_numresolucion varchar (50) not null,
+	titu_tazacion ,
+	titu_fechaemision date,
+	titu_fecharesolucion date,
+	est smallint not null default 1,
+	FOREIGN KEY (cert_id) REFERENCES tb_certificado(cert_id),
+	FOREIGN KEY (alca_id) REFERENCES tb_alcalde(alca_id)
+);
+
+CREATE TABLE tb_alcalde(
+	alca_id serial primary key(),
+	alca_dni varchar(50) not null,
+	alca_nom varchar (50) not null,
+	alca_apep varchar (50) not null,
+	alca_apem varchar (50) not null,
+	alca_fechini date,
+	alca_fechfin date,
+	est smallint not null default 1,
+
+);

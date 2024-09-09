@@ -1,0 +1,67 @@
+Tabla Usuario:
+usu_id (clave primaria)
+usu_nom
+usu_apep
+usu_apem
+usu_correo
+usu_pass
+usu_sex
+usu_telf
+rol_id (puede ser administrador, empleado de ventas, etc.)
+fech_crea
+est
+
+Tabla Categoría:
+cat_id (clave primaria)
+cat_nom
+
+Tabla Producto:
+pro_id (clave primaria)
+pro_nom
+pro_descrip
+pro_prec
+pro_stock
+cat_id (clave externa que hace referencia a la tabla de Categoría)
+
+Tabla Cliente:
+cli_id (clave primaria)
+cli_nom
+cli_apem
+cli_apep
+cli_direc
+cli_correo
+cli_telf
+
+Tabla Venta:
+ven_id (clave primaria)
+ven_fech
+ven_total
+usu_id (clave externa que hace referencia a la tabla de Usuario)
+cli_id (clave externa que hace referencia a la tabla de Cliente)
+
+Tabla Detalle de Venta:
+ven_prod_id (clave primaria)
+ven_id (clave externa que hace referencia a la tabla de Venta)
+pro_id (clave externa que hace referencia a la tabla de Producto)
+cant
+precuni
+subtotal
+
+SELECT 
+td_producto_venta.ven_pro_id,
+tm_cliente.cli_nom,
+tm_cliente.cli_apep,
+tm_cliente.cli_apem,
+tm_producto.pro_nom,
+tm_producto.pro_descrip,
+tm_producto.pro_prec,
+tm_producto.pro_stock,
+tm_categoria.cat_nom
+FROM  td_producto_venta INNER JOIN 
+tm_producto ON td_producto_cliente.pro_id = tm_producto.pro_id INNER JOIN
+tm_venta ON td_producto_cliente.ven_id = tm_venta.ven_id INNER JOIN
+tm_usuario ON tm_venta.usu_id = tm_usuario.usu_id INNER JOIN
+tm_cliente ON tm_venta.cli_id = tm_cliente.cli_id INNER JOIN
+tm_producto ON tm_categoria.cat_id = tm_producto.cat_id
+WHERE 
+td_producto_venta.ven_pro_id = 1

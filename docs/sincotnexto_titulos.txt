@@ -1,0 +1,63 @@
+STRING_AGG(CAST(td_certificado_propietario.cepr_id AS VARCHAR), ', ') AS cepr_ids,
+                            tb_titulo.titu_id,
+                            tb_titulo.titu_partelec,
+                            tb_titulo.titu_numtitulo,
+                            tb_titulo.titu_partlote,
+                            tb_titulo.titu_asiento,
+                            tb_titulo.titu_serie,
+                            tb_titulo.titu_tipo,
+                            tb_titulo.titu_tazacion,
+                            tb_titulo.titu_numresolucion,
+                            tb_titulo.titu_fecharesolucion,
+                            tb_titulo.titu_fechaemision,
+                            tb_certificado.cert_id,
+                            tb_certificado.cert_ubicacion,
+                            tb_certificado.cert_manzana,
+                            tb_certificado.cert_lote,
+                            tb_certificado.cert_tipopobl,
+                            tb_certificado.cert_nompobl,
+                            tb_certificado.cert_distrito,
+                            tb_certificado.cert_provincia,
+                            tb_certificado.cert_departamento,
+                            tb_certificado.cert_area,
+                            tb_certificado.cert_frente,
+                            tb_certificado.cert_derecha,
+                            tb_certificado.cert_izquierda,
+                            tb_certificado.cert_fondo,
+                            STRING_AGG(
+                                CONCAT(
+                                    ' idProp: ', tb_propietario.prop_id, ' ',
+                                    '| Nombre Completo: ', tb_propietario.prop_nombre, ' ', tb_propietario.prop_apep, ' ', tb_propietario.prop_apem, ' ',
+                                    '| Estado Civil: ', tb_propietario.prop_estadocivil, ' ',
+                                    '| DNI/RUC: ', tb_propietario.prop_dni, ' ',
+                                    '| Tipo: ', tb_propietario.prop_tipo, ' ',
+                                    '| Emp: ', tb_propietario.prop_empadronamientos
+                                ),
+
+$sub_array[] = $row["cepr_ids"];
+                        $sub_array[] = $row["titu_id"];
+                        $sub_array[] = $row["titu_partelec"];
+                        $sub_array[] = $row["titu_numtitulo"];
+                        $sub_array[] = $row["titu_partlote"];
+                        $sub_array[] = $row["titu_asiento"];
+                        $sub_array[] = $row["titu_serie"];
+                        $sub_array[] = $row["titu_tipo"];
+                        $sub_array[] = $row["titu_tazacion"];
+                        $sub_array[] = $row["titu_numresolucion"];
+                        $sub_array[] = $row["titu_fecharesolucion"];
+                        $sub_array[] = $row["titu_fechaemision"];
+                        $sub_array[] = $row["titu_fecharegistro"];
+                        $sub_array[] = $row["cert_id"];
+                        $sub_array[] = $row["cert_ubicacion"];
+                        $sub_array[] = $row["cert_manzana"];
+                        $sub_array[] = $row["cert_lote"];
+                        $sub_array[] = $row["cert_tipopobl"];
+                        $sub_array[] = $row["cert_nompobl"];
+                        $sub_array[] = $row["cert_distrito"];
+                        $sub_array[] = $row["cert_provincia"];
+                        $sub_array[] = $row["cert_departamento"];
+                        $sub_array[] = $row["cert_area"];
+                        $sub_array[] = $row["cert_frente"];
+                        $sub_array[] = $row["cert_derecha"];
+                        $sub_array[] = $row["cert_izquierda"];
+                        $sub_array[] = $row["cert_fondo"]; */

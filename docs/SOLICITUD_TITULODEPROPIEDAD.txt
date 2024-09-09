@@ -1,0 +1,29 @@
+
+-------------------------------------------------------------------
+
+SOLICITUD DE TITULO DE PROPIEDAD
+
+alcalde
+propietario
+direccion
+sector
+manzana
+lote
+distrito
+provincia 
+lambayeque
+anexos(documentos necesarios)
+fecha
+telefono
+------------------------------------------------------------------
+
+ANEXOS
+
+copia de DNI
+copia de partida de matrimonio ode nacimiento o certificado de solteria
+copia de partida de nacimiento de los hijos (si los tuviera) p de carga familiar
+certificado negativo de propiedad del posesionario otorgado por la SUNARP
+documento de compra venta del lote (copia fedateada) o certificado de posesion
+declaraciones juradas
+costo administrativo se adjunta ordenanza municipal Nº 023-2015-MPCH/A
+

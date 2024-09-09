@@ -1,0 +1,102 @@
+ /*TODO: Mostrar todos los datos de un curso por su id de detalle */
+        public function get_titulo_x_id_certificado($titu_id){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="SELECT 
+                    tb_alcalde.alca_id,
+                    tb_alcalde.alca_dni,
+                    tb_alcalde.alca_nom,
+                    tb_alcalde.alca_apep,
+                    tb_alcalde.alca_apem,
+                    tb_titulo.titu_id,
+                    tb_titulo.titu_partelec,
+                    tb_titulo.titu_numtitulo,
+                    tb_titulo.titu_partlote,
+                    tb_titulo.titu_asiento,
+                    tb_titulo.titu_serie,
+                    tb_titulo.titu_tipo,
+                    tb_titulo.titu_tazacion,
+                    tb_titulo.titu_numresolucion,
+                    tb_titulo.titu_fecharesolucion,
+                    tb_certificado.cert_id,
+                    tb_certificado.cert_perimetro,
+                    tb_certificado.cert_ubicacion,
+                    tb_certificado.cert_tipopobl,
+                    tb_certificado.cert_nompobl,
+                    tb_certificado.cert_frente,
+                    tb_certificado.cert_derecha,
+                    tb_certificado.cert_izquierda,
+                    tb_certificado.cert_fondo,
+                    tb_Certificado.cert_manzana,
+                    tb_certificado.cert_lote,
+                    tb_certificado.cert_distrito,
+                    tb_certificado.cert_provincia,
+                    tb_certificado.cert_departamento,
+                    tb_propietario.prop_id,
+                    tb_propietario.prop_nombre,
+                    tb_propietario.prop_apep,
+                    tb_propietario.prop_apem,
+                    tb_propietario.prop_estadocivil,
+                    tb_propietario.prop_dni,
+                    tb_propietario.prop_tipo,
+                    tb_propietario.prop_empadronamientos
+                    FROM 
+                    tb_titulo INNER JOIN
+                    tb_certificado ON tb_titulo.cert_id = tb_certificado.cert_id INNER JOIN
+                    td_certificado_propietario ON tb_certificado.cert_id = td_certificado_propietario.cert_id INNER JOIN
+                    tb_propietario ON td_certificado_propietario.prop_id = tb_propietario.prop_id INNER JOIN
+                    tb_alcalde ON tb_titulo.alca_id = tb_alcalde.alca_id 
+                    WHERE 
+                    tb_titulo.est = 1 AND tb_titulo.titu_id = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $curd_id);
+            $sql->execute();
+            return $resultado=$sql->fetchAll();
+
+
+
+case "mostrar_titulo_certificado":
+                    $datos = $usuario->get_titulo_x_id_certificado($_POST["titu_id"]);
+                    if(is_array($datos)==true and count($datos)<>0){
+                        foreach($datos as $row){
+                            $output["alca_id"] = $row["alca_id"];
+                            $output["alca_dni"] = $row["alca_dni"];
+                            $output["alca_nom"] = $row["alca_nom"];
+                            $output["alca_apep"] = $row["alca_apep"];
+                            $output["alca_apem"] = $row["alca_apem"];
+                            $output["titu_id"] = $row["titu_id"];
+                            $output["titu_partelec"] = $row["titu_partelec"];
+                            $output["titu_numtitulo"] = $row["titu_numtitulo"];
+                            $output["titu_partlote"] = $row["titu_partlote"];
+                            $output["titu_asiento"] = $row["titu_asiento"];
+                            $output["titu_serie"] = $row["titu_serie"];
+                            $output["titu_tipo"] = $row["titu_tipo"];
+                            $output["titu_tazacion"] = $row["titu_tazacion"];
+                            $output["titu_numresolucion"] = $row["titu_numresolucion"];
+                            $output["cert_id"] = $row["cert_id"];
+                            $output["cert_perimetro"] = $row["cert_perimetro"];
+                            $output["cert_ubicacion"] = $row["cert_ubicacion"];
+                            $output["cert_tipopobl"] = $row["cert_tipopobl"];
+                            $output["cert_nompobl"] = $row["cert_nompobl"];
+                            $output["cert_frente"] = $row["cert_frente"];
+                            $output["cert_derecha"] = $row["cert_derecha"];
+                            $output["cert_izquierda"] = $row["cert_izquierda"];
+                            $output["cert_fondo"] = $row["cert_fondo"];
+                            $output["cert_manzana"] = $row["cert_manzana"];
+                            $output["cert_lote"] = $row["cert_lote"];
+                            $output["cert_distrito"] = $row["cert_distrito"];
+                            $output["cert_provincia"] = $row["cert_provincia"];
+                            $output["cert_departamento"] = $row["cert_departamento"];
+                            $output["prop_id"] = $row["prop_id"];
+                            $output["prop_nombre"] = $row["prop_nombre"];
+                            $output["prop_apep"] = $row["prop_apep"];
+                            $output["prop_apem"] = $row["prop_apem"];
+                            $output["prop_estadocivil"] = $row["prop_estadocivil"];
+                            $output["prop_dni"] = $row["prop_dni"];
+                            $output["prop_tipo"] = $row["prop_tipo"];
+                            $output["prop_empadronamientos"] = $row["prop_empadronamientos"];
+                        }
+
+                        echo json_encode($output);
+                    }
+                    break;
